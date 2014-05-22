@@ -9,10 +9,13 @@ using System.Web.Routing;
 namespace Grodslok.TvSeriesManager {
     public class MvcApplication : System.Web.HttpApplication {
         protected void Application_Start() {
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            new AppHost().Init();
         }
+
+        protected void RegisterRoutes(RouteCollection routes) {
+            routes.IgnoreRoute("api/{*pathInfo}");
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" }); 
+        }
+        
     }
 }
