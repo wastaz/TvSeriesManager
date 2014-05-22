@@ -11,11 +11,5 @@ namespace Grodslok.TvSeriesManager {
         protected void Application_Start() {
             new AppHost().Init();
         }
-
-        protected void RegisterRoutes(RouteCollection routes) {
-            routes.IgnoreRoute("api/{*pathInfo}");
-            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" }); 
-        }
-        
     }
 }
