@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grodslok.TvSeriesManager", "Grodslok.TvSeriesManager\Grodslok.TvSeriesManager.csproj", "{DC1E312D-49B5-4183-B806-BA14F65CC70E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grodslok.TvSeriesManager.Shared", "Grodslok.TvSeriesManager.Shared\Grodslok.TvSeriesManager.Shared.csproj", "{1FB2671C-A56A-419D-919E-860677BA4FAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DC1E312D-49B5-4183-B806-BA14F65CC70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC1E312D-49B5-4183-B806-BA14F65CC70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC1E312D-49B5-4183-B806-BA14F65CC70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB2671C-A56A-419D-919E-860677BA4FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB2671C-A56A-419D-919E-860677BA4FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB2671C-A56A-419D-919E-860677BA4FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB2671C-A56A-419D-919E-860677BA4FAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

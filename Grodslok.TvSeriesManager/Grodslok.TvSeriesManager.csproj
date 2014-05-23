@@ -172,8 +172,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\Database\TvSeries.cs" />
+    <Compile Include="Model\Database\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HelloService.cs" />
+    <Compile Include="Services\SeriesService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -191,7 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Grodslok.TvSeriesManager.Shared\Grodslok.TvSeriesManager.Shared.csproj">
+      <Project>{1FB2671C-A56A-419D-919E-860677BA4FAF}</Project>
+      <Name>Grodslok.TvSeriesManager.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
