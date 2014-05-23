@@ -5,7 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using Funq;
 using Grodslok.TvSeriesManager.Services;
+using Raven.Client;
 using Raven.Client.Document;
+using Raven.Client.Embedded;
+using Raven.Database.Server;
 using ServiceStack;
 using ServiceStack.Mvc;
 
@@ -15,14 +18,15 @@ namespace Grodslok.TvSeriesManager {
 
         public override void Configure(Container container) {
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
-
-            var documentStore = new DocumentStore { ConnectionStringName = "ravenDB" };
-            documentStore.Initialize();
-            using(var session = documentStore.OpenSession()) {
-                session.Store(new Test { Firstname = "Morris", Lastname = "Hund" });
-                session.SaveChanges();
-            }
+            SetupContainer(container);
         }
+
+        private void SetupContainer(Container container) {
+            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
+            var ravenInstance = new EmbeddableDocumentStore { DataDirectory = "App_Data" };
+            ravenInstance.Initialize();
+            container.Register<IDocumentStore>(ravenInstance);
+        } 
 
         public class Test {
             public string Firstname { get; set; }
