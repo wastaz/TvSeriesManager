@@ -33,7 +33,10 @@ namespace Grodslok.TvSeriesManager.Services {
             }
             return myUser.ConvertTo<UserResponse>();
         }
-
+        
+        // TODO:
+        // http://services.tvrage.com/info.php?page=main
+        
         public WatchedEpisodeResponse Post(WatchedEpisodeRequest request) {
             return request.ConvertTo<WatchedEpisodeResponse>();
         }
